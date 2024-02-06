@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+  }
+/*
+!!-----
+!! Font Declaration
+!!-----
+*/
+
+/* 
+!!----- 'Ostrich'
+*/
+@font-face{
+    font-family: 'Ostrich';         /* alias */
+    src:local('Ostrich Sans'),       /* check whether there is font to user */
+        url('../fonts/ostrich-sans-bold.woff'), format('woff'),    /* if not, load a new one */
+        url('../fonts/ostrich-sans-bold.tff'), format('truetype'),      
+        url('../fonts/ostrich-sans-bold.sav'), format('svg');
+
+        /* Order of application : svg -> tff -> woff (bottom one has higher priority*/
+}
+
+/*
+!!----- 'Google fonts'
+*/
+@font-face{
+    font-family: 'Oswald', sans-serif;
+}
+/* Define style class */
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 
+!!-----
+!! Container
+!!-----
+*/
+
+#container{
+    width: 1000px;
+    height: 1000px;
+    margin: 20px auto;
+    position: relative;
+    /*background-color: rgb(200, 175, 175);*/
+}
+
+/* 
+!!-----
+!! Header
+!!-----
+*/
+#header {
+    width: 100%;
+    height: 70px;
+    
+    background-color: rgb(255, 255, 255);
+    position:relative;
+}
+
+#header nav{
+    position: absolute;
+    width:100%;
+
+    height: 40px;
+    line-height: 40px;
+    top: 30px;
+}
+#header nav ul {list-stype: none;}
+#header ul{
+    padding-left: 400px;
+}
+#header nav ul li{
+    display: inline;
+    margin: 0 5px;
+}
+#header li{
+    font-family: 'Oswald', sans-serif;
+    font-size: 15pt;
+    color: hsl(0, 100%, 0%);
+    line-height: 100%;
+}
+
+#header img{
+    /*
+    float: left;
+    padding: 2pt auto;
+    margin-left: 2pt;
+    margin-right: 5pt;
+    margin-top: 1pt;
+    margin-bottom: 1pt;
+    height: 80%;
+    */
+    float: left; 
+    margin: 3px auto;
+    height: 90%;
+}
+
+
+#header h1{
+    position: absolute;
+    left: 7.2%;
+    height: 70px;
+    line-height: 70px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 22pt;
+    letter-spacing: 0.15em;
+    color: hsla(0, 0%, 0%, 0.813);
+}
+
+/* 
+!!-----
+!! Contents
+!!-----
+*/
+
+#contents{
+    width:100%;
+    height: 900px;
+    position: relative;
+    /*background-color: white;*/
+}
+
+#contents video{
+    position: absolute;
+    width: 75%;
+    top: 25px;
+    left: 125px;
+}
+
+#contents nav{
+    position: absolute;
+    width: 80%;
+    top: 50px;
+    left: 100px;
+    font-size : 20pt;
+}
+
+#contents div{
+    margin-top: 10px;
+    text-indent: 5%;
+    font-size: 15pt;
+    font-family: 'Oswald', sans-serif;
+    color:rgb(100, 97, 97);
+}
+#contents h1{
+    font-family: 'Oswald', sans-serif;
+}
+
+#contents a{
+    color:rgb(35, 87, 183);
+}
+
+#contents .spine_list_style{
+    margin-left: 20px;
+    text-indent: 2%;
+    color: black;
+    line-height:45px; 
+}
+
+#contents .spine_list_author{
+    font-weight:normal;
+    color: rgb(100, 97, 97);
+    font-size: 14pt;
+    line-height:28px;
+    list-style:none;
+    margin-left: 20px;
+}
+/* 
+!!-----
+!! Footer
+!!-----
+*/
+
+#footer{
+    width:100%;
+    height: 50px;
+    position: relative;
+    /*background-color:rgba(213, 211, 211, 0.863);*/
+}
+
+#footer hr{
+    color: rgb(151, 151, 151);
+    border-color: rgb(151, 151, 151, 20%);
+    size: 1px;
+}
+
+#footer p{
+    position: absolute;
+    top : 2px;
+    font-size : 15pt;
+    color: rgb(151, 151, 151);
+    font-family: 'Oswald', sans-serif;
+}
+
+#footer .bold{
+    font-weight:800;
+    color: rgb(0,0,0);
+}
+/*
+#header t_item {
+    display: block;
+    text-decoration: none;
+    padding: 0 0.5em 0 0.5em;
+    outline: 0;
+    font-family: 'Ostrich', sans-serif;
+    font-size: 10pt;
+    color: hsla(0, 100%, 50%, 50%);
+ } */
+
+
