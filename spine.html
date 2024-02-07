@@ -8,6 +8,7 @@
     <!-- Open CSSs-->
 
     <link rel="stylesheet" href="theme/css/main.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
     </style>
@@ -18,70 +19,148 @@
 
 
 <body>
+    <!-- Header Navigator -->
+    <header id="nav-container">
+        <a href="index.html"><img src="images/gem_logo.png"></a>
+        <h1> <a href="index.html"> GEM Simulations </a></h1>
+        <nav>
+            <ul>
+                <li> <a href="des.html">Descriptions</a></li>
+                <li> <a href="spec.html">Spec</a></li>
+                <li> <a href="data.html">Data Access</a></li>
+                <li> <a href="spine.html">Who does what?</a></li>
+                <li> <a href="publication.html">Publications</a></li>
+                <li> <a href="index.html">Others</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Main Body -->
-    <div id="container">
+    <!-- Main page -->
+    <!-- From Here -->
+    <main id="contents-spine">
 
-        <!-- Header Navigator -->
-        <header id="header">
-            <a href="index.html"><img src="images/gem_logo.png"></a>
-            <h1> <a href="index.html"> GEM Simulations </a></h1>
-            <nav>
-                <ul>
-                    <li> <a href="des.html">Descriptions</a></li>
-                    <li> <a href="spec.html">Spec</a></li>
-                    <li> <a href="data.html">Data Access</a></li>
-                    <li> <a href="spine.html">Who does what?</a></li>
-                    <li> <a href="publication.html">Publications</a></li>
-                    <li> <a href="index.html">Others</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Section -->
-        <section id="contents">
-
-            <!-- From Here -->
-            <nav>
-
-                <!-- Usage policy -->
+        
+        <div>
+            
+            <!-- Usage policy -->
+            <section>
                 <h1>To Use GEM simulation data</h1>
-                <div>
-                    <p>You are welcome to play with the GEM simulation data <a href="data.html">here</a>. When you are planning to publish your work, please refer to the below publication policy.</p>
-                    <br>
-                    <ul class="spine_list_style">
-                        <li> Check the conflict of interest of your project</li>
-                        <li> Register your project proposal first</li>
-                        <li> Wait to be accepted</li>
-                        <li> Please update your project progress</li>
-                        <li> The core members are should be included to the author list
-                            <span>
-                                <ul class="spine_list_author">
-                                    <li>Sukyoung Ken Yi (yi@yonsei.ac.kr)</li>
-                                    <li>San Han (sanhan@yonsei.ac.kr)</li>
-                                    <li>Jinsu Rhee (jinsu.rhee@gmail.com)</li>
-                                    <li>J. K. Jang (starbrown816@yonsei.ac.kr)</li>
-                                    <li>Seyoung Jeon (syj3514@yonsei.ac.kr)</li>
-                                </ul>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+            
+                <p>
+                    You are welcome to play with the GEM simulation data <a href="data.html">here</a>. When you are planning to publish your work, please refer to the below publication policy.
+                </p>
+                <br>
+                <ul>
+                    <li> Check the conflict of interest of your project</li>
+                    <li> Register your project proposal first</li>
+                    <li> Wait to be accepted</li>
+                    <li> Please update your project progress</li>
+                    <li> The core members should be included to the author list
+                        <span><ul class="list_author">
+                            <li>Sukyoung Ken Yi (yi@yonsei.ac.kr)</li>
+                            <li>San Han (sanhan@yonsei.ac.kr)</li>
+                            <li>Jinsu Rhee (jinsu.rhee@gmail.com)</li>
+                            <li>J. K. Jang (starbrown816@yonsei.ac.kr)</li>
+                            <li>Seyoung Jeon (syj3514@yonsei.ac.kr)</li>
+                        </ul></span>
+                    </li>
+                </ul>
+            </section>
+            <br>
+
+            <!-- Registration policy -->
+            <section>
+                <h1> To Register your project</h1>
+                <p>
+                    You can proceed your research with the GEM simulation data after registering your science project <a href="spine.html">here (not yet linked)</a>. <!-- update here-->
+                </p>
+
+                <br>
+                <ul>
+                    <li> Choose a kind of simulation </li>
+                    <li> Describe your science topic </li>
+                    <li> Input lead- and co-authors </li>
+                    <li> Speicfy the deadline </li>
+                </ul>
                 <br>
 
-                <!-- Registration policy -->
-                <h1> To Register your project</h1>
+                <p> After your proposal is accepted </p>
+                <br>
+                <ul>
+                    <li> Keep updating research status </li>
+                    <li> Set to "stalled" when your research is stalled</li>
+                </ul>
+            </section>
+            <br>
 
-            </nav>
-            
-        </section>
-       
-        <!-- Footer -->
-        <footer id="footer">
-            <hr>
-            <p> (c) Yonsei University <span class="bold">G</span>alaxy <span class="bold">E</span>volution <span class="bold">M</span>eeting</p>
-        </footer>
-    </div>
+            <!-- Registration Tool -->
+            <section>
+                <h1> Register </h1>
+                <p> Submit your science proposal </p>
+                <br>
+                
+                <form><!--</form> class="register_box">-->
+                    <fieldset>
+                    <table>
+                        <colgroup>
+                            <col style="width:15%;">
+                            <col style="width:40%;">
+                            <col style="width:12%;">
+                            <col style="width:13%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                        </colgroup>
+                        <tr>
+                            <th> <label for="r_type"> Simulation type </label></th>
+                            <th> <label for="r_topic"> Topic </label></th>
+                            <th> <label for="r_lau"> Lead Author </label></th>
+                            <th> <label for="r_cau"> Co-author </label></th>
+                            <th> <label for="r_email"> Email </label></th>
+                            <th> <label for="r_deadline"> Deadline </label></th>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left; padding-left:7px; font-size:12pt;">
+                                <p><input class="register_checkbox" type="checkbox" id="r_type" value="yzics"> YZiCS</p> <br>
+                                <p><input class="register_checkbox" type="checkbox" id="r_type" value="nh"> NewHorizon </p><br>
+                                <p><input class="register_checkbox" type="checkbox" id="r_type" value="nh2"> NewHorizon2 </p><br>
+                                <p><input class="register_checkbox" type="checkbox" id="r_type" value="nc"> NewCluster </p><br>
+                            </td>
+                            <td><input type="text" id="r_topic"></td>
+                            <td><input type="text" id="r_lau"></td>
+                            <td><input type="text" id="r_cau"></td>
+                            <td><input type="text" id="r_email"></td>
+                            <td><input type="month" id="r_deadline"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div id="buttons" style="top:auto; left:77%;" class="buttons">
+                        <input type="submit" value="submit">
+                        <input type="reset" value="reset">
+                    </div>
+
+                    </fieldset>
+
+   
+                </form>
+                
+            </section>
+            <!-- Why this section does not contain form when it computes height-->
+
+            <!-- Proposal List -->
+            <section style="margin-top:170pt;">
+                <h1> Proposal list </h1>
+            </section>
+
+        </div>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer id="footer">
+        <hr>
+        <p> (c) Yonsei University <span class="bold">G</span>alaxy <span class="bold">E</span>volution <span class="bold">M</span>eeting</p>
+    </footer>
+
 </body>
 
 </html>

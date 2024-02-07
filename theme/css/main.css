@@ -2,16 +2,21 @@
     box-sizing: border-box;
     margin:0;
   }
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+display {inline;}
 /*
 !!-----
 !! Font Declaration
 !!-----
 */
 
-/* 
-!!----- 'Ostrich'
-*/
-@font-face{
+@font-face{ /* Ostrich */
     font-family: 'Ostrich';         /* alias */
     src:local('Ostrich Sans'),       /* check whether there is font to user */
         url('../fonts/ostrich-sans-bold.woff'), format('woff'),    /* if not, load a new one */
@@ -22,86 +27,114 @@
 }
 
 /*
-!!----- 'Google fonts'
-*/
-@font-face{
+@font-face{ Google fonts
     font-family: 'Oswald', sans-serif;
 }
-/* Define style class */
+*/
 
-a{
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-}
-
-/* 
+/*
 !!-----
-!! Container
+!! Define style class
 !!-----
 */
 
-#container{
+
+
+/* 
+!!-----
+!! Layout
+!!-----
+*/
+
+#nav-container{
     width: 1000px;
-    height: 1000px;
+    height: 70px;
     margin: 20px auto;
     position: relative;
-    /*background-color: rgb(200, 175, 175);*/
 }
 
-/* 
+#contents-main{
+    width: 1000px;
+    height: 800px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#contents-spine{
+    width: 1000px;
+    margin: 20px auto;
+    position: relative;
+    height: 1600px;
+}
+
+#contents-data{
+    width:1000px;
+    height: 1200px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#contents-des{
+    width:1000px;
+    height: 1200px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#contents-publication{
+    width:1000px;
+    height: 1200px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#contents-spec{
+    width:1000px;
+    height: 1400px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#footer{
+    width:1000px;
+    height: 50px;
+    margin: 20px auto;
+    position: relative;
+}
+
+/*
 !!-----
-!! Header
-!!-----
+!! Navigator
+!!----
 */
-#header {
-    width: 100%;
-    height: 70px;
-    
-    background-color: rgb(255, 255, 255);
-    position:relative;
-}
-
-#header nav{
+#nav-container nav{
     position: absolute;
     width:100%;
-
     height: 40px;
     line-height: 40px;
     top: 30px;
 }
-#header nav ul {list-stype: none;}
-#header ul{
+
+#nav-container ul{
     padding-left: 400px;
 }
-#header nav ul li{
+#nav-container nav ul li{
     display: inline;
     margin: 0 5px;
-}
-#header li{
     font-family: 'Oswald', sans-serif;
     font-size: 15pt;
     color: hsl(0, 100%, 0%);
     line-height: 100%;
 }
 
-#header img{
-    /*
-    float: left;
-    padding: 2pt auto;
-    margin-left: 2pt;
-    margin-right: 5pt;
-    margin-top: 1pt;
-    margin-bottom: 1pt;
-    height: 80%;
-    */
+#nav-container img{
     float: left; 
     margin: 3px auto;
     height: 90%;
 }
 
 
-#header h1{
+#nav-container h1{
     position: absolute;
     left: 7.2%;
     height: 70px;
@@ -112,76 +145,161 @@ a{
     color: hsla(0, 0%, 0%, 0.813);
 }
 
-/* 
+/*
 !!-----
-!! Contents
+!! Main
 !!-----
 */
 
-#contents{
-    width:100%;
-    height: 900px;
-    position: relative;
-    /*background-color: white;*/
-}
-
-#contents video{
+#contents-main video{
     position: absolute;
     width: 75%;
     top: 25px;
     left: 125px;
 }
 
-#contents nav{
-    position: absolute;
-    width: 80%;
-    top: 50px;
-    left: 100px;
-    font-size : 20pt;
-}
+/*
+!!-----
+!! Spine
+!!-----
+*/
 
-#contents div{
-    margin-top: 10px;
-    text-indent: 5%;
-    font-size: 15pt;
-    font-family: 'Oswald', sans-serif;
-    color:rgb(100, 97, 97);
-}
-#contents h1{
-    font-family: 'Oswald', sans-serif;
-}
-
-#contents a{
-    color:rgb(35, 87, 183);
-}
-
-#contents .spine_list_style{
+#contents-spine .spine_list_style{
     margin-left: 20px;
     text-indent: 2%;
     color: black;
     line-height:45px; 
 }
 
-#contents .spine_list_author{
+#contents-spine section{
+    height:auto;
+}
+
+#contents-spine div{
+    position: absolute;
+    width: 80%;
+    top: 50px;
+    left: 100px;
+    font-size : 14pt;
+    font-family: 'Oswald', sans-serif;
+    text-indent: 5%;
+    color:rgb(100, 97, 97);
+}
+
+#contents-spine h1{
+    text-indent: 0%;
+    color:black;
+    line-height: 50px;
+}
+
+#contents-spine a{
+    color:rgb(35, 87, 183);
+}
+
+#contents-spine ul{
+    font-weight:normal;
+    color: black;
+    line-height: 34px;
+    font-size: 14pt;
+    margin-left: 20px;
+    text-indent: 2%;
+}
+
+
+#contents-spine .list_author{
     font-weight:normal;
     color: rgb(100, 97, 97);
-    font-size: 14pt;
+    font-size: 12pt;
     line-height:28px;
     list-style:none;
     margin-left: 20px;
 }
+
+#contents-spine form{
+    position: absolute;
+    width: 120%;
+    top: auto;
+    left: -10%;
+    display: block;
+    margin-bottom: 10px;
+    height:auto;
+}
+
+#contents-spine table{
+    width: 100%;
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 12pt;
+}
+
+#contents-spine td>input{
+    font-size:12pt;
+    width:90%;
+    height:100%;
+}
+
+#contents-spine div>input{
+    border-color: black;
+    background-color: rgb(225, 106, 9);
+    font-size:14pt;
+    border-radius:5pt;
+    color: white;
+    margin-left: 5pt;
+}
+
+#contents-spine fieldset{
+    border: 0px;
+}
+#contents-spine td>p{
+    font-size:12pt;
+    display:inline;
+    height:100%;
+}
+#contents-spine .register_checkbox{
+    width: auto;
+}
+#contents-spine td, th{
+    border-left: 1px solid black;
+    text-align: center;
+}
+
+#contents-spine th{
+    background-color: orange;
+    color: rgb(255,255,255);
+}
+
+#contents-spine .buttons{
+    font-size:20pt;
+    width:40%;
+}
+/* ---------- */
+
+
+#contents{
+    width:100%;
+    height: auto; /*900px;*/
+    position: relative;
+    /*background-color: white;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* 
 !!-----
 !! Footer
 !!-----
 */
 
-#footer{
-    width:100%;
-    height: 50px;
-    position: relative;
-    /*background-color:rgba(213, 211, 211, 0.863);*/
-}
+
 
 #footer hr{
     color: rgb(151, 151, 151);
