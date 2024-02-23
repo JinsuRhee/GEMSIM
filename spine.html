@@ -94,12 +94,17 @@
             <br>
 
             <!-- Registration Tool -->
+            <!-- TODO 
+                Submit identifier by user ID
+            -->
+
             <section>
                 <h1> Register </h1>
                 <p> Submit your science proposal </p>
                 <br>
                 
-                <form><!--</form> class="register_box">-->
+                <script src="js/spine.js"></script>
+                <form id="proposal_form">
                     <fieldset>
                     <table>
                         <colgroup>
@@ -111,25 +116,26 @@
                             <col style="width:10%;">
                         </colgroup>
                         <tr>
-                            <th> <label for="r_type"> Simulation type </label></th>
-                            <th> <label for="r_topic"> Topic </label></th>
-                            <th> <label for="r_lau"> Lead Author </label></th>
-                            <th> <label for="r_cau"> Co-author </label></th>
-                            <th> <label for="r_email"> Email </label></th>
-                            <th> <label for="r_deadline"> Deadline </label></th>
+                            <th> Simulation type </th>
+                            <th> Topic </th>
+                            <th> Lead Author </th>
+                            <th> Co-author </th>
+                            <th> Email </th>
+                            <th> Deadline </th>
                         </tr>
                         <tr>
+                            
                             <td style="text-align:left; padding-left:7px; font-size:12pt;">
-                                <p><input class="register_checkbox" type="checkbox" id="r_type" value="yzics"> YZiCS</p> <br>
-                                <p><input class="register_checkbox" type="checkbox" id="r_type" value="nh"> NewHorizon </p><br>
-                                <p><input class="register_checkbox" type="checkbox" id="r_type" value="nh2"> NewHorizon2 </p><br>
-                                <p><input class="register_checkbox" type="checkbox" id="r_type" value="nc"> NewCluster </p><br>
+                                <p><input class="register_checkbox" type="checkbox" id="st_yz" > YZiCS</p> <br>
+                                <p><input class="register_checkbox" type="checkbox" id="st_nh" > NewHorizon </p><br>
+                                <p><input class="register_checkbox" type="checkbox" id="st_nh2"> NewHorizon2 </p><br>
+                                <p><input class="register_checkbox" type="checkbox" id="st_nc" > NewCluster </p><br>
                             </td>
-                            <td><input type="text" id="r_topic"></td>
-                            <td><input type="text" id="r_lau"></td>
-                            <td><input type="text" id="r_cau"></td>
-                            <td><input type="text" id="r_email"></td>
-                            <td><input type="month" id="r_deadline"></td>
+                            <td><input type="text"  id="topic"></td>
+                            <td><input type="text"  id="lau"></td>
+                            <td><input type="text"  id="cau"></td>
+                            <td><input type="text"  id="email"></td>
+                            <td><input type="month" id="deadline"></td>
                         </tr>
                     </table>
                     <br>
@@ -146,8 +152,14 @@
             </section>
             <!-- Why this section does not contain form when it computes height-->
 
+            <!-- Approve / Disapprove the proposed project -->
+            <!-- TODO (only appear to the administrator)-->
+            <section id="approve_project" style="margin-top:170pt;">
+
+            </section>
+
             <!-- Proposal List -->
-            <section style="margin-top:170pt;">
+            <section style="margin-top:10pt;">
                 <h1> Proposal list </h1>
             </section>
 

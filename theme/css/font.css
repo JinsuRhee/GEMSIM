@@ -1,0 +1,12 @@
+@font-face{ /* Ostrich */
+    font-family: 'Ostrich';         /* alias */
+    src:local('Ostrich Sans'),       /* check whether there is font to user */
+        url('../fonts/ostrich-sans-bold.woff'), format('woff'),    /* if not, load a new one */
+        url('../fonts/ostrich-sans-bold.tff'), format('truetype'),      
+        url('../fonts/ostrich-sans-bold.sav'), format('svg');
+
+        /* Order of application : svg -> tff -> woff (bottom one has higher priority*/
+}
+
+
+
