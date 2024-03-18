@@ -1,0 +1,321 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+!!-----
+!! Font Declaration
+!!-----
+*/
+
+@font-face{ /* Ostrich */
+  font-family: 'Ostrich';         /* alias */
+  src:local('Ostrich Sans'),       /* check whether there is font to user */
+      url('../fonts/ostrich-sans-bold.woff'), format('woff'),    /* if not, load a new one */
+      url('../fonts/ostrich-sans-bold.tff'), format('truetype'),      
+      url('../fonts/ostrich-sans-bold.sav'), format('svg');
+
+      /* Order of application : svg -> tff -> woff (bottom one has higher priority*/
+}
+
+/*
+@font-face{ Google fonts
+  font-family: 'Oswald', sans-serif;
+}
+*/
+
+/*
+!!-----
+!! Define style class
+!!-----
+*/
+
+
+
+/* 
+!!-----
+!! Layout
+!!-----
+*/
+
+#nav-container{
+  width: 1000px;
+  height: 70px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#contents-main{
+  width: 1000px;
+  height: 800px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#contents-spine{
+  width: 1000px;
+  margin: 20px auto;
+  position: relative;
+  height: 1600px;
+}
+
+#contents-data{
+  width:1000px;
+  height: 1200px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#contents-des{
+  width:1000px;
+  height: 1200px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#contents-publication{
+  width:1000px;
+  height: 1200px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#contents-spec{
+  width:1000px;
+  height: 1400px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#footer{
+  width:1000px;
+  height: 50px;
+  margin: 20px auto;
+  position: relative;
+}
+
+/*
+!!-----
+!! Navigator
+!!----
+*/
+#nav-container nav{
+  position: absolute;
+  width:100%;
+  height: 40px;
+  line-height: 40px;
+  top: 20px;
+}
+
+#nav-container ul{
+  padding-left: 400px;
+}
+#nav-container nav ul li{
+  display: inline;
+  margin: 0 5px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14pt;
+  color: hsl(0, 100%, 0%);
+  line-height: 100%;
+}
+
+#nav-container img{
+  float: left; 
+  margin: 3px auto;
+  height: 90%;
+}
+
+
+#nav-container h1{
+  position: absolute;
+  left: 7.2%;
+  height: 70px;
+  line-height: 70px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18pt;
+  letter-spacing: 0.15em;
+  color: hsla(0, 0%, 0%, 0.813);
+}
+
+/*
+!!-----
+!! Main
+!!-----
+*/
+
+#contents-main video{
+  position: absolute;
+  width: 75%;
+  top: 25px;
+  left: 125px;
+}
+
+/*
+!!-----
+!! Spine
+!!-----
+*/
+
+#contents-spine .spine_list_style{
+  margin-left: 20px;
+  text-indent: 2%;
+  color: black;
+  line-height:45px; 
+}
+
+#contents-spine section{
+  height:auto;
+}
+
+#contents-spine div{
+  position: absolute;
+  width: 80%;
+  top: 50px;
+  left: 100px;
+  font-size : 14pt;
+  font-family: 'Oswald', sans-serif;
+  text-indent: 5%;
+  color:rgb(100, 97, 97);
+}
+
+#contents-spine h1{
+  text-indent: 0%;
+  color:black;
+  line-height: 50px;
+}
+
+#contents-spine a{
+  color:rgb(35, 87, 183);
+}
+
+#contents-spine ul{
+  font-weight:normal;
+  color: black;
+  line-height: 34px;
+  font-size: 14pt;
+  margin-left: 20px;
+  text-indent: 2%;
+}
+
+
+#contents-spine .list_author{
+  font-weight:normal;
+  color: rgb(100, 97, 97);
+  font-size: 12pt;
+  line-height:28px;
+  list-style:none;
+  margin-left: 20px;
+}
+
+#contents-spine form{
+  position: absolute;
+  width: 120%;
+  top: auto;
+  left: -10%;
+  display: block;
+  margin-bottom: 10px;
+  height:auto;
+}
+
+#contents-spine table{
+  width: 100%;
+  border: 2px solid black;
+  border-collapse: collapse;
+  font-size: 12pt;
+}
+
+#contents-spine td>input{
+  font-size:12pt;
+  width:90%;
+  height:100%;
+}
+
+#contents-spine div>input{
+  border-color: black;
+  background-color: rgb(225, 106, 9);
+  font-size:14pt;
+  border-radius:5pt;
+  color: white;
+  margin-left: 5pt;
+}
+
+#contents-spine fieldset{
+  border: 0px;
+}
+#contents-spine td>p{
+  font-size:12pt;
+  display:inline;
+  height:100%;
+}
+#contents-spine .register_checkbox{
+  width: auto;
+}
+#contents-spine td, th{
+  border-left: 1px solid black;
+  text-align: center;
+}
+
+#contents-spine th{
+  background-color: orange;
+  color: rgb(255,255,255);
+}
+
+#contents-spine .buttons{
+  font-size:20pt;
+  width:40%;
+}
+/* ---------- */
+
+
+#contents{
+  width:100%;
+  height: auto; /*900px;*/
+  position: relative;
+  /*background-color: white;*/
+}
+
+/* 
+!!-----
+!! Footer
+!!-----
+*/
+
+
+
+#footer hr{
+  color: rgb(151, 151, 151);
+  border-color: rgb(151, 151, 151, 20%);
+  size: 1px;
+}
+
+#footer p{
+  position: absolute;
+  top : 2px;
+  font-size : 15pt;
+  color: rgb(151, 151, 151);
+  font-family: 'Oswald', sans-serif;
+}
+
+#footer .bold{
+  font-weight:800;
+  color: rgb(0,0,0);
+}
+/*
+#header t_item {
+  display: block;
+  text-decoration: none;
+  padding: 0 0.5em 0 0.5em;
+  outline: 0;
+  font-family: 'Ostrich', sans-serif;
+  font-size: 10pt;
+  color: hsla(0, 100%, 50%, 50%);
+} */
+
+
