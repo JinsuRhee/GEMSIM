@@ -1,9 +1,12 @@
-import {getDataBase, ref, set} from "firebase/database";
+import {getDatabase, ref, set} from "firebase/database";
 import { app } from "./db.js";
+
+const db = getDatabase(app);
 
 function writeUserData(pj){
     set(ref(db, 'users/' + pj.ID), {
         sim_type:pj.sim_type,
+        sim_list:pj.sim_list,
         topic:pj.topic, 
         lead_author:pj.lead_author, 
         co_author:pj.co_author,
@@ -19,53 +22,54 @@ class project{
     sim_list = ['YZiCS', 'NewHorizon', 'NewHorizon2', 'NewCluster'];
     sim_type = [false, false, false, false];
     
+    id = 0;
     topic = 'null';
     lead_author = 'null';
     co_author = 'null';
     email = 'null';
     deadline = 'null';
-    status = 'waiting';
+    status = 'waiting'; // waiting, accepted
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('proposal_form');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
-
-        // Get input value by accessing its 'value' property
-        let pj;
-        pj = new project();
-
-        pj.ID = 1;
-        pj.topic = document.getElementById('topic').value;
-        pj.lead_author = document.getElementById('lau').value;
-        pj.co_author = document.getElementById('cau').value;
-        pj.email = document.getElementById('email').value;
-        pj.deadline = document.getElementById('deadline').value;
-
-        //pj.sim_type[0] = st_yz = document.getElementById('st_yz').checked;
-        //pj.sim_type[1] = st_yz = document.getElementById('st_nh').checked;
-        //pj.sim_type[2] = st_yz = document.getElementById('st_nh2').checked;
-        //pj.sim_type[3] = st_yz = document.getElementById('st_nc').checked;
-
-        pj.sim_type[0] = document.getElementById('st_yz').checked;
-        pj.sim_type[1] = document.getElementById('st_nh').checked;
-        pj.sim_type[2] = document.getElementById('st_nh2').checked;
-        pj.sim_type[3] = document.getElementById('st_nc').checked;
-
-
-        // Display input value in console
-        //console.log('Username:', topic, deadline, st_yz, st_nh, st_nh2, st_nc);
-        console.log('Username:', pj.topic, pj.lead_author, pj.co_author, pj.email, pj.deadline, pj.sim_type[0], pj.sim_type[1], pj.sim_type[2], pj.sim_type[3]);
-        alert('Submitted');
-
-        // Send the project to the DB
-        writeUserData(pj);
-        //make_pjtable_foradmin(pj);
-        // Writeup
-    });
-});
+//document.addEventListener('DOMContentLoaded', function() {
+//    const form = document.getElementById('proposal_form');
+//
+//    form.addEventListener('submit', function(event) {
+//        event.preventDefault(); // Prevent form submission
+//
+//        // Get input value by accessing its 'value' property
+//        let pj;
+//        pj = new project();
+//
+//        pj.id = 1;
+//        pj.topic = document.getElementById('topic').value;
+//        pj.lead_author = document.getElementById('lau').value;
+//        pj.co_author = document.getElementById('cau').value;
+//        pj.email = document.getElementById('email').value;
+//        pj.deadline = document.getElementById('deadline').value;
+//
+//        //pj.sim_type[0] = st_yz = document.getElementById('st_yz').checked;
+//        //pj.sim_type[1] = st_yz = document.getElementById('st_nh').checked;
+//        //pj.sim_type[2] = st_yz = document.getElementById('st_nh2').checked;
+//        //pj.sim_type[3] = st_yz = document.getElementById('st_nc').checked;
+//
+//        pj.sim_type[0] = document.getElementById('st_yz').checked;
+//        pj.sim_type[1] = document.getElementById('st_nh').checked;
+//        pj.sim_type[2] = document.getElementById('st_nh2').checked;
+//        pj.sim_type[3] = document.getElementById('st_nc').checked;
+//
+//
+//        // Display input value in console
+//        //console.log('Username:', topic, deadline, st_yz, st_nh, st_nh2, st_nc);
+//        console.log('Username:', pj.topic, pj.lead_author, pj.co_author, pj.email, pj.deadline, pj.sim_type[0], pj.sim_type[1], pj.sim_type[2], pj.sim_type[3]);
+//        alert('Submitted');
+//
+//        // Send the project to the DB
+//        writeUserData(pj);
+//        //make_pjtable_foradmin(pj);
+//        // Writeup
+//    });
+//});
 
 
 function make_pjtable_foradmin(pj){

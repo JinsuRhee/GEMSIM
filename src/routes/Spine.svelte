@@ -1,12 +1,43 @@
 <script>
+  // Default
+  import { link } from "svelte-spa-router";
+
+  // Layout
   import Header from "./../components/header.svelte";
   import Footer from "./../components/footer.svelte";
 
+  // Project-related
   import "./../js/spine.js";
+  import { getDatabase, ref, onValue } from "firebase/database";
+  import { app } from "./../js/db.js";
 
-  import { link } from "svelte-spa-router";
+  //$: data = [];
+  //let pjlist = [];
+  //const db = getDatabase(app);
+
+  //onMount(() => {
+  //  const dataRef = ref(db, "users");
+  //  onValue(dataRef, (snapshot) => {
+  //    if (snapshot.exists()) {
+  //      pjlist = [];
+  //      snapshot.forEach((childSnapshot) => {
+  //        pjlist.push(childSnapshot.val());
+  //      });
+  //    } else {
+  //    }
+  //  });
+  //});
+  //const starCountRef = ref(db, "users");
+  //onValue(starCountRef, (snapshot) => {
+  //  data = snapshot.val();
+  //  console.log(data);
+  //});
+
+  // Page-related
   import data from "./Data.svelte";
   import spine from "./Spine.svelte";
+  import { onMount } from "svelte";
+  import { logger } from "firebase-tools";
 </script>
 
 <Header />
@@ -162,15 +193,39 @@
           <col style="width:8%;" />
           <col style="width:14%;" />
         </colgroup>
-        <tr>
-          <th> Simulation type </th>
-          <th> Topic </th>
-          <th> Lead Author </th>
-          <th> Co-author </th>
-          <th> Email </th>
-          <th> Deadline </th>
-          <th> Decision </th>
-        </tr>
+        <thead>
+          <tr>
+            <th> Simulation type </th>
+            <th> Topic </th>
+            <th> Lead Author </th>
+            <th> Co-author </th>
+            <th> Email </th>
+            <th> Deadline </th>
+            <th> Decision </th>
+          </tr>
+        </thead>
+
+        <!-- Updated by the DB data-->
+        <!--
+        <tbody>
+          
+          {#each pjlist as item}
+            {#if item.status == "wating"}
+              <tr>
+                <td>
+                  {#each item.sim_type as item_sim, index}
+                    {#if item_sim != "false"}
+                      {item.sim_list[index]}
+                    {/if}
+                  {/each}
+                </td>
+              </tr>
+            {/if}
+          {/each}
+          <tr> a </tr>
+          
+        </tbody>
+        -->
       </table>
     </section>
 
