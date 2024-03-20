@@ -1,6 +1,12 @@
 <script>
   import Header from "./../components/header.svelte";
   import Footer from "./../components/footer.svelte";
+
+  import "./../js/spine.js";
+
+  import { link } from "svelte-spa-router";
+  import data from "./Data.svelte";
+  import spine from "./Spine.svelte";
 </script>
 
 <Header />
@@ -11,8 +17,9 @@
       <h1>To Use GEM simulation data</h1>
 
       <p>
-        You are welcome to play with the GEM simulation data <a href="data.html"
-          >here</a
+        You are welcome to play with the GEM simulation data <a
+          href="/data"
+          use:link>here</a
         >. When you are planning to publish your work, please refer to the below
         publication policy.
       </p>
@@ -43,7 +50,7 @@
       <h1>To Register your project</h1>
       <p>
         You can proceed your research with the GEM simulation data after
-        registering your science project <a href="spine.html"
+        registering your science project <a href="/spine" use:link
           >here (not yet linked)</a
         >. <!-- update here-->
       </p>
