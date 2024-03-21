@@ -11,22 +11,26 @@
   import { getDatabase, ref, onValue } from "firebase/database";
   import { app } from "./../js/db.js";
 
-  //$: data = [];
-  //let pjlist = [];
-  //const db = getDatabase(app);
+  import { make_pjtable_accept } from "./../js/spine";
 
-  //onMount(() => {
-  //  const dataRef = ref(db, "users");
-  //  onValue(dataRef, (snapshot) => {
-  //    if (snapshot.exists()) {
-  //      pjlist = [];
-  //      snapshot.forEach((childSnapshot) => {
-  //        pjlist.push(childSnapshot.val());
-  //      });
-  //    } else {
-  //    }
-  //  });
-  //});
+  //$: data = [];
+  let pjlist = [];
+  const db = getDatabase(app);
+
+  onMount(() => {
+    const dataRef = ref(db, "users");
+    onValue(dataRef, (snapshot) => {
+      if (snapshot.exists()) {
+        //pjlist = snapshot.val();
+        pjlist = [];
+        snapshot.forEach((childSnapshot) => {
+          pjlist.push(childSnapshot.val());
+        });
+      } else {
+      }
+    });
+  });
+
   //const starCountRef = ref(db, "users");
   //onValue(starCountRef, (snapshot) => {
   //  data = snapshot.val();
@@ -37,7 +41,7 @@
   import data from "./Data.svelte";
   import spine from "./Spine.svelte";
   import { onMount } from "svelte";
-  import { logger } from "firebase-tools";
+  //import { logger } from "firebase-tools";
 </script>
 
 <Header />
@@ -186,6 +190,7 @@
       <table id="approve_project_list" border="1">
         <colgroup>
           <col style="width:13%;" />
+          <col style="width:13%;" />
           <col style="width:30%;" />
           <col style="width:12%;" />
           <col style="width:13%;" />
@@ -195,6 +200,7 @@
         </colgroup>
         <thead>
           <tr>
+            <th> User ID </th>
             <th> Simulation type </th>
             <th> Topic </th>
             <th> Lead Author </th>
@@ -206,33 +212,48 @@
         </thead>
 
         <!-- Updated by the DB data-->
-        <!--
         <tbody>
-          
-          {#each pjlist as item}
-            {#if item.status == "wating"}
+          {#each pjlist as item, pindex}
+            {#if item.status == "waiting"}
               <tr>
+                <td> {item.id} </td>
                 <td>
                   {#each item.sim_type as item_sim, index}
-                    {#if item_sim != "false"}
+                    {#if item_sim != false}
                       {item.sim_list[index]}
+                      <br />
                     {/if}
                   {/each}
+                </td>
+
+                <td> {item.topic} </td>
+                <td> {item.lead_author} </td>
+                <td> {item.co_author} </td>
+                <td> {item.email} </td>
+                <td> {item.deadline} </td>
+                <td>
+                  <button
+                    on:click={() => make_pjtable_accept(pjlist, pindex, 1)}
+                  >
+                    Accept
+                  </button>
+                  <button
+                    on:click={() => make_pjtable_accept(pjlist, pindex, 0)}
+                  >
+                    Reject
+                  </button>
                 </td>
               </tr>
             {/if}
           {/each}
-          <tr> a </tr>
-          
         </tbody>
-        -->
       </table>
     </section>
 
     <!-- Proposal List -->
     <section style="margin-top:10pt;">
       <h1>Proposal list</h1>
-      <table id="project_list_table">
+      <table id="project_list_table" border="1">
         <colgroup>
           <col style="width:13%;" />
           <col style="width:30%;" />
@@ -253,7 +274,30 @@
             <th> Status </th>
           </tr>
         </thead>
-        <tbody> </tbody>
+        <!-- Updated by the DB data-->
+        <tbody>
+          {#each pjlist as item, pindex}
+            {#if item.status == "approved"}
+              <tr>
+                <td>
+                  {#each item.sim_type as item_sim, index}
+                    {#if item_sim != false}
+                      {item.sim_list[index]}
+                      <br />
+                    {/if}
+                  {/each}
+                </td>
+
+                <td> {item.topic} </td>
+                <td> {item.lead_author} </td>
+                <td> {item.co_author} </td>
+                <td> {item.email} </td>
+                <td> {item.deadline} </td>
+                <td> {item.status} </td>
+              </tr>
+            {/if}
+          {/each}
+        </tbody>
       </table>
     </section>
   </div>

@@ -10,10 +10,14 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@types/node": "^20.11.30",
     "svelte": "^4.2.12",
     "vite": "^5.1.6"
   },
   "dependencies": {
+    "firebase": "^10.9.0",
+    "firebase-tools": "^13.5.2",
+    "re2": "^1.20.10",
     "svelte-spa-router": "^4.0.1"
   }
 }
